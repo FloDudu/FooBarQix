@@ -6,7 +6,7 @@ namespace FooBarQixTest
     [TestClass]
     public class FooBarQixTest
     {
-        #region Tests for the method 'isDivisbleBy(int n, int div)'
+        #region Tests for the method 'isDivisbleBy'
         [TestMethod]
         public void Should_true_when_is_divisible_by_input()
         {
@@ -49,7 +49,7 @@ namespace FooBarQixTest
         }
         #endregion
 
-        #region Tests for the method 'isContainedIn(int n, int digit)'
+        #region Tests for the method 'isContainedIn'
         [TestMethod]
         public void Should_true_when_digit_is_contained_in_number()
         {
@@ -193,6 +193,63 @@ namespace FooBarQixTest
             string expected = "FooBarQix";
 
             string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+        #endregion
+
+        #region Tests for the method 'containToFooBarQix'
+        [TestMethod]
+        public void Should_return_number_as_string_when_not_contain()
+        {
+            int number = 8;
+            string expected = "8";
+
+            string actual = FooBarQix.FooBarQix.containToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foo_when_contain_3()
+        {
+            int number = 13;
+            string expected = "Foo";
+
+            string actual = FooBarQix.FooBarQix.containToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_bar_when_contain_5()
+        {
+            int number = 15;
+            string expected = "Bar";
+
+            string actual = FooBarQix.FooBarQix.containToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_qix_when_contain_7()
+        {
+            int number = 17;
+            string expected = "Qix";
+
+            string actual = FooBarQix.FooBarQix.containToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foobarqix_in_order_when_contain_3_5_7()
+        {
+            int number = 573;
+            string expected = "BarQixFoo";
+
+            string actual = FooBarQix.FooBarQix.containToFooBarQix(number);
 
             Assert.AreEqual(expected, actual);
         }
