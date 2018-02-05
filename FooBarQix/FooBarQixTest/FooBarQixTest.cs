@@ -48,5 +48,64 @@ namespace FooBarQixTest
             Assert.IsNotNull(expectedException);
         }
         #endregion
+
+        #region Tests for the method 'isContainedIn(int n, int digit)'
+        [TestMethod]
+        public void Should_true_when_digit_is_contained_in_number()
+        {
+            int number = 12345;
+            int digit = 4;
+
+            bool actual = FooBarQix.FooBarQix.isContainedIn(number, digit);
+
+            Assert.IsTrue(actual);
+        }
+        [TestMethod]
+        public void Should_false_when_digit_is_not_contained_in_number()
+        {
+            int number = 12345;
+            int digit = 8;
+
+            bool actual = FooBarQix.FooBarQix.isContainedIn(number, digit);
+
+            Assert.IsFalse(actual);
+        }
+        [TestMethod]
+        public void Should_thorws_FooBarQixException_when_digit_is_upper_than_9()
+        {
+            int number = 12345;
+            int digit = 10;
+            FooBarQix.FooBarQixException expectedException = null;
+
+            try
+            {
+                FooBarQix.FooBarQix.isContainedIn(number, digit);
+            }
+            catch (FooBarQix.FooBarQixException ex)
+            {
+                expectedException = ex;
+            }
+
+            Assert.IsNotNull(expectedException);
+        }
+        [TestMethod]
+        public void Should_thorws_FooBarQixException_when_digit_is_lower_than_0()
+        {
+            int number = 12345;
+            int digit = -1;
+            FooBarQix.FooBarQixException expectedException = null;
+
+            try
+            {
+                FooBarQix.FooBarQix.isContainedIn(number, digit);
+            }
+            catch (FooBarQix.FooBarQixException ex)
+            {
+                expectedException = ex;
+            }
+
+            Assert.IsNotNull(expectedException);
+        }
+        #endregion
     }
 }

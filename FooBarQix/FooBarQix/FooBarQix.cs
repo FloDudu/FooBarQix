@@ -18,5 +18,21 @@ namespace FooBarQix
         {
             return n % div == 0;
         }
+
+        public static bool isContainedIn(int n, int digit)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    [Serializable()]
+    public class FooBarQixException : Exception
+    {
+        public FooBarQixException() : base() { }
+        public FooBarQixException(string message) : base(message) { }
+        public FooBarQixException(string message, System.Exception inner) : base(message, inner) { }
+        protected FooBarQixException(System.Runtime.Serialization.SerializationInfo info,
+            System.Runtime.Serialization.StreamingContext context)
+        { }
     }
 }
