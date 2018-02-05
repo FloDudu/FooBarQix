@@ -107,5 +107,95 @@ namespace FooBarQixTest
             Assert.IsNotNull(expectedException);
         }
         #endregion
+
+        #region Tests for the conversion from the division to FooBarQix
+        [TestMethod]
+        public void Should_return_number_as_string_when_not_divisible()
+        {
+            int number = 8;
+            string expected = "8";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foo_when_divisible_by_3()
+        {
+            int number = 3;
+            string expected = "Foo";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_bar_when_divisible_by_5()
+        {
+            int number = 5;
+            string expected = "Bar";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_qix_when_divisible_by_7()
+        {
+            int number = 7;
+            string expected = "Qix";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foobar_when_divisible_by_3_5()
+        {
+            int number = 15;
+            string expected = "FooBar";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_fooqix_when_divisible_by_3_7()
+        {
+            int number = 21;
+            string expected = "FooQix";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_barqix_when_divisible_by_5_7()
+        {
+            int number = 35;
+            string expected = "BarQix";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foobarqix_when_divisible_by_3_5_7()
+        {
+            int number = 105;
+            string expected = "FooBarQix";
+
+            string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+        #endregion
     }
 }

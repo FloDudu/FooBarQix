@@ -40,6 +40,11 @@ namespace FooBarQix
             }
             return false;
         }
+
+        public static string divisionToFooBarQix(int n)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     [Serializable()]
