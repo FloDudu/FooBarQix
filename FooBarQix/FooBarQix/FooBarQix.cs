@@ -8,6 +8,13 @@ namespace FooBarQix
 {
     public static class FooBarQix
     {
+        public static Dictionary<int, string> DictFooBarQix = new Dictionary<int, string>
+        {
+            {3, "Foo"},
+            {5, "Bar"},
+            {7, "Qix"}
+        };
+
         /// <summary>
         /// Define if the number 'n' is divisible by the divisor 'div'
         /// </summary>
@@ -41,9 +48,25 @@ namespace FooBarQix
             return false;
         }
 
+        /// <summary>
+        /// Convert a number in FooBarQix according to the possible division
+        /// </summary>
+        /// <param name="n">The number to convert in FooBarQix</param>
+        /// <returns>The FooBarQix string according to the division. IF the number
+        /// is not divisible, this function returns an empty string</returns>
         public static string divisionToFooBarQix(int n)
         {
-            throw new NotImplementedException();
+            string res = string.Empty;
+
+            foreach (KeyValuePair<int, string> pair in DictFooBarQix)
+            {
+                if (isDivisibleBy(n, pair.Key))
+                {
+                    res += pair.Value;
+                }
+            }
+
+            return res;
         }
     }
 

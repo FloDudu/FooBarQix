@@ -108,12 +108,12 @@ namespace FooBarQixTest
         }
         #endregion
 
-        #region Tests for the conversion from the division to FooBarQix
+        #region Tests for the method 'divisionToFooBarQix'
         [TestMethod]
-        public void Should_return_number_as_string_when_not_divisible()
+        public void Should_return_empty_string_when_not_divisible()
         {
             int number = 8;
-            string expected = "8";
+            string expected = string.Empty;
 
             string actual = FooBarQix.FooBarQix.divisionToFooBarQix(number);
 
