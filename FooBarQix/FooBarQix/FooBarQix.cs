@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FooBarQix
 {
-    public class FooBarQix
+    public static class FooBarQix
     {
+        public static bool isDivisibleBy(int n, int div)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
