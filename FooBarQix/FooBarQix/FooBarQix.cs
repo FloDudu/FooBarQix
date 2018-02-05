@@ -19,9 +19,26 @@ namespace FooBarQix
             return n % div == 0;
         }
 
+        /// <summary>
+        /// Define if the digit is contained in the number 'n'
+        /// </summary>
+        /// <returns>True if the digit is in the number, false otherwise</returns>
         public static bool isContainedIn(int n, int digit)
         {
-            throw new NotImplementedException();
+            if (digit > 9 || digit < 0)
+            {
+                throw new FooBarQixException();
+            }
+
+            while (n > 0)
+            {
+                if (n % 10 == digit)
+                {
+                    return true;
+                }
+                n = n / 10;
+            }
+            return false;
         }
     }
 

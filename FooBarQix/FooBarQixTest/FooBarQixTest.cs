@@ -54,7 +54,7 @@ namespace FooBarQixTest
         public void Should_true_when_digit_is_contained_in_number()
         {
             int number = 12345;
-            int digit = 4;
+            int digit = 3;
 
             bool actual = FooBarQix.FooBarQix.isContainedIn(number, digit);
 
