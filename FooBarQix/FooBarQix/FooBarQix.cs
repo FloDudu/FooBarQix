@@ -69,9 +69,41 @@ namespace FooBarQix
             return res;
         }
 
+        /// <summary>
+        /// Convert a number in FooBarQix according to the digits in it
+        /// </summary>
+        /// <param name="n">the number to convert</param>
+        /// <returns>The number in FooBarQix</returns>
         public static string containToFooBarQix(int n)
         {
-            throw new NotImplementedException();
+            string res = string.Empty;
+            string strNumber = n.ToString();
+            bool remove_digit = false;
+
+            // First, we check if the number can convert in FooBarQix.
+            // If it is possible, we remove each digits after the conversion
+            foreach (KeyValuePair<int, string> pair in DictFooBarQix)
+            {
+                if (isDivisibleBy(n, pair.Key) || isContainedIn(n, pair.Key))
+                {
+                    remove_digit = true;
+                    break;
+                }
+            }
+
+            foreach (char c in strNumber)
+            {
+                if (DictFooBarQix.ContainsKey(c - 48) && isContainedIn(n, c - 48))
+                {
+                    res += DictFooBarQix[c - 48];
+                }
+                else if (!remove_digit)
+                {
+                    res += c;
+                }
+            }
+
+            return res;
         }
     }
 
