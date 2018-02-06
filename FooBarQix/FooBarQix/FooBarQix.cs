@@ -15,6 +15,11 @@ namespace FooBarQix
             {7, "Qix"}
         };
 
+        public static Dictionary<int, string> DictTrace = new Dictionary<int, string>
+        {
+            {0, "*" }
+        };
+
         /// <summary>
         /// Define if the number 'n' is divisible by the divisor 'div'
         /// </summary>
@@ -93,9 +98,13 @@ namespace FooBarQix
 
             foreach (char c in strNumber)
             {
-                if (DictFooBarQix.ContainsKey(c - 48) && isContainedIn(n, c - 48))
+                if (DictFooBarQix.ContainsKey(c - 48))
                 {
                     res += DictFooBarQix[c - 48];
+                }
+                else if (DictTrace.ContainsKey(c - 48))
+                {
+                    res += DictTrace[c - 48];
                 }
                 else if (!remove_digit)
                 {
@@ -106,6 +115,9 @@ namespace FooBarQix
             return res;
         }
 
+        /// <summary>
+        /// Convert a number to FooBarQix
+        /// </summary>
         public static string toFooBarQix(int n)
         {
             return divisionToFooBarQix(n) + containToFooBarQix(n);
