@@ -303,7 +303,7 @@ namespace FooBarQixTest
         [TestMethod]
         public void Should_write_qixfoo_when_divisible_by_7_and_contains_3()
         {
-            int number = 63;
+            int number = 322;
             string expected = "QixFoo";
 
             string actual = FooBarQix.FooBarQix.toFooBarQix(number);

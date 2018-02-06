@@ -108,7 +108,7 @@ namespace FooBarQix
 
         public static string toFooBarQix(int n)
         {
-            throw new NotImplementedException();
+            return divisionToFooBarQix(n) + containToFooBarQix(n);
         }
     }
 
