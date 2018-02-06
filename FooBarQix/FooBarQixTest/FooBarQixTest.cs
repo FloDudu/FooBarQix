@@ -255,7 +255,7 @@ namespace FooBarQixTest
         }
         #endregion
 
-        #region Tests for the method 'toFooBarQix'
+        #region Tests for the method 'toFooBarQix' - Step 1
         [TestMethod]
         public void Should_write_foofoo_when_divisible_by_3_and_contains_3()
         {
@@ -349,6 +349,52 @@ namespace FooBarQixTest
         {
             int number = 33;
             string expected = "FooFooFoo";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+        #endregion
+
+        #region Tests for the method 'toFooBarQix' - Step 2
+        [TestMethod]
+        public void Should_replace_0_when_is_not_divisible_and_contains_0()
+        {
+            int number = 101;
+            string expected = "1*1";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_replace_0_when_divisible_by_3_and_contains_3_0_3()
+        {
+            int number = 303;
+            string expected = "FooFoo*Foo";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_replace_0_when_divisible_by_3_5_7_and_contains_0_5()
+        {
+            int number = 105;
+            string expected = "FooBarQix*Bar";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_replace_0_when_is_divisible_by_3_5_and_contains_0()
+        {
+            int number = 10101;
+            string expected = "FooQix**";
 
             string actual = FooBarQix.FooBarQix.toFooBarQix(number);
 
