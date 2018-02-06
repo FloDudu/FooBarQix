@@ -105,6 +105,11 @@ namespace FooBarQix
 
             return res;
         }
+
+        public static string toFooBarQix(int n)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     [Serializable()]

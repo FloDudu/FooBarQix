@@ -254,5 +254,106 @@ namespace FooBarQixTest
             Assert.AreEqual(expected, actual);
         }
         #endregion
+
+        #region Tests for the method 'toFooBarQix'
+        [TestMethod]
+        public void Should_write_foofoo_when_divisible_by_3_and_contains_3()
+        {
+            int number = 3;
+            string expected = "FooFoo";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foobar_when_divisible_by_3_and_contains_5()
+        {
+            int number = 51;
+            string expected = "FooBar";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_fooqix_when_divisible_by_3_and_contains_7()
+        {
+            int number = 72;
+            string expected = "FooQix";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_barbar_when_divisible_by_5_and_contains_5()
+        {
+            int number = 5;
+            string expected = "BarBar";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_qixfoo_when_divisible_by_7_and_contains_3()
+        {
+            int number = 63;
+            string expected = "QixFoo";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_qixbar_when_divisible_by_7_and_contains_5()
+        {
+            int number = 56;
+            string expected = "QixBar";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_qixqix_when_divisible_by_7_and_contains_7()
+        {
+            int number = 7;
+            string expected = "QixQix";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foobarbar_when_divisible_by_3_5_and_contains_5()
+        {
+            int number = 15;
+            string expected = "FooBarBar";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Should_write_foofoofoo_when_divisible_by_3_and_contains_3_twice()
+        {
+            int number = 33;
+            string expected = "FooFooFoo";
+
+            string actual = FooBarQix.FooBarQix.toFooBarQix(number);
+
+            Assert.AreEqual(expected, actual);
+        }
+        #endregion
     }
 }
