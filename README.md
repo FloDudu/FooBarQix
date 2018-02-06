@@ -1,5 +1,7 @@
-# Kata-FooBarQix
+# FooBarQix
 You should implements a function String compute(String) which implements the following rules.
+
+### To run tests, you need Visual Studio 2015
 
 # Step 1
 
